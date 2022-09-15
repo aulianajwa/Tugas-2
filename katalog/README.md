@@ -1,7 +1,7 @@
 https://katalog-item.herokuapp.com/katalog/
 
 ## Request Client ke Web Aplikasi
-https://drive.google.com/file/d/1DZR072oOyPI_kW9k8MFqNXufPRL9E7LX/view?usp=sharing
+![alt text](./image/"bagan")
 
 Pertama, urls.py akan mencari response yang cocok dari request client. Ketika ditemukan response yang tepat, view akan mengambil data dari models.py dan me-render sebuah template. Models merupakan sebuah tempat untuk menampung data-data yang ingin ditampilkan dan template merupakan hasil luaran yang akan ditampilkan pada web. 
 
