@@ -1,0 +1,115 @@
+[
+    {
+        "model": "mywatchlist.watchlist",
+        "pk": 1,
+        "fields": {
+            "watched": true,
+            "title": "Little Women",
+            "rating": 5,
+            "release_date": "7 February 2020",
+            "review": "A well-made adaptation from the famous classic novel, Little Women. This is a very inspiring and warm movie."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk": 2,
+        "fields": {
+            "watched": true,
+            "title": "Fantastic Beasts : The Secrets of Dumbledore",
+            "rating": 3,
+            "release_date": "13 April 2022",
+            "review": "One of my most anticipated movie this year. The sad thing is there are still a lot of plot holes in this movie."
+            
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk": 3,
+        "fields": {
+            "watched": false,
+            "title": "Mencuri Raden Saleh",
+            "rating": 5,
+            "release_date": "25 August 2022",
+            "review": "Heard a lot of good reviews about this movie."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk": 4,
+        "fields": {
+            "watched": false,
+            "title": "Pengabdi Setan 2",
+            "rating": 3,
+            "release_date": "4 August 2022",
+            "review": "Not a big fan of horror movies but I'm still very curious about it."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk": 5,
+        "fields": {
+            "watched": true,
+            "title": "Turning Red",
+            "rating": 4,
+            "release_date": "1 March 2022",
+            "review": "A fun and heartwarming movie. I really like how they portrayed the cultures and traditions."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk": 6,
+        "fields": {
+            "watched": false,
+            "title": "Confidential Assignment : 2",
+            "rating": 5,
+            "release_date": "7 September 2022",
+            "review": "Loved the first movie so I'm really excited with this one."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk": 7,
+        "fields": {
+            "watched": true,
+            "title": "Alchemy of Souls",
+            "rating": 5,
+            "release_date": "18 June 2022",
+            "review": "Unexpected storyline and beautiful cinematography."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk": 8,
+        "fields": {
+            "watched": false,
+            "title": "Enola Holmes 2",
+            "rating": 5,
+            "release_date": "4 November 2022",
+            "review": "The first movie was a success. It was so fun to watch and had a great storytelling technique."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk": 9,
+        "fields": {
+            "watched": true,
+            "title": "Jurassic World",
+            "rating": 5,
+            "release_date": "8 June 2022",
+            "review": "Filled with a lot of thrilling adventures."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlist",
+        "pk": 10,
+        "fields": {
+            "watched": true,
+            "title": "Incantation",
+            "rating": 4,
+            "release_date": "18 March 2022",
+            "review": "The documentary concept of this movie really brings out the eeriness."
+        }
+    }
+
+    
+]
