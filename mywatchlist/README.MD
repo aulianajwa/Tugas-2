@@ -2,9 +2,9 @@
 https://katalog-item.herokuapp.com/mywatchlist/
 
 ## Postman
-![alt text](./image/postman-xml.png)
-![alt text](./image/postman-json.png)
-![alt text](./image/postman-html.png)
+![alt text](./images/postman-xml.png)
+![alt text](./images/postman-json.png)
+![alt text](./images/postman-html.png)
 
 ## Perbedaan JSON, XML, dan HTML
 JSON (JavaScript Object Notation) merupakan sebuah format untuk menyimpan dan merepresentasikan data. Struktur dari JSON diturunkan dari syntax JavaScript. Ukuran JSON lebih ringan sehingga proses pengiriman dan pembuatannya lebih cepat.
