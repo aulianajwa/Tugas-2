@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+ {% block content %}
+  <body style="background-color:white">
+  
+  </body>
+  <h1 style="
+  text-align : center;
+  font-family : sans serif;
+  color :black ;
+  ">Halo, {{username}}</h1>
+  
+  <style>
+    table{
+      border : 1px solid black;
+      border-collapse: collapse;
+      color : black;
+      font-weight: normal;
+      padding:8px ;
+      width: 100%;
+
+    }
+    th,td{
+      border : 1px solid black;
+      color : black;
+      font-weight: normal;
+      padding:8px ;
+    }
+  </style>
+  
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Title</th>
+      <th>Description</th>
+    </tr>
+    
+    {% comment %} Add the data below this line {% endcomment %}
+
+    {% for task in list_todo %}
+    <tr>
+        <th>{{task.date}}</th>
+        <th>{{task.title}}</th>
+        <th>{{task.description}}</th>
+        <!-- {% if task.is_finished == True}
+          <th>Selesai</th>
+        {% else %}
+          <th>Belum Selesai</th>
+        {% endif %} -->
+    </tr>
+    {% endfor %}
+  </table>
+
+  <h5>Sesi terakhir login: {{ last_login }}</h5>
+  <style>
+    button{
+        display: inline-block;
+        background-color: white;
+        border-radius: 10px;
+        border: 4px double #cccccc;
+        color: black;
+        text-align: center;
+        font-size: 12px;
+        padding: 11px;
+    }
+  </style>
+  <button><a href="{% url 'todolist:create-task' %}">Create New Task</a></button>
+  <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+  
+
+
+ {% endblock content %}
