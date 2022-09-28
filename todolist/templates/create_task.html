@@ -13,14 +13,7 @@
     <form method="POST" action="">
         {% csrf_token %}
         <table>
-            <tr>
-                <td>title: </td>2
-                <td>{{forms.title}}</td>
-            </tr>
-                    
-            <tr>
-                <td>description: </td>
-                <td>{{forms.description}}</td>
+            {{forms.as_table}}
             </tr>
 
             <tr>

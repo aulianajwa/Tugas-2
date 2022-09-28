@@ -33,6 +33,9 @@
       <th>Date</th>
       <th>Title</th>
       <th>Description</th>
+      <th>Status</th>
+      <th>Toggle</th>
+      <th>Delete Task</th>
     </tr>
     
     {% comment %} Add the data below this line {% endcomment %}
@@ -42,12 +45,17 @@
         <th>{{task.date}}</th>
         <th>{{task.title}}</th>
         <th>{{task.description}}</th>
-        <!-- {% if task.is_finished == True}
-          <th>Selesai</th>
+
+        {% if task.is_finished == False %}
+        <th>Belum Selesai</th>
         {% else %}
-          <th>Belum Selesai</th>
-        {% endif %} -->
+        <th>Selesai</th>
+        {% endif %}
+        <th><button><a href="{% url 'todolist:toggle-task' id=task.id %}">Change Status</a></b</th>
+        <th><button><a href="{% url 'todolist:delete-task' id=task.id %}">Delete Task</a></button></th>
+        
     </tr>
+
     {% endfor %}
   </table>
 
