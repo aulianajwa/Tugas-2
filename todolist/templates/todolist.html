@@ -34,7 +34,7 @@
       <th>Title</th>
       <th>Description</th>
       <th>Status</th>
-      <th>Toggle</th>
+      <th>Change Status</th>
       <th>Delete Task</th>
     </tr>
     
@@ -51,7 +51,7 @@
         {% else %}
         <th>Selesai</th>
         {% endif %}
-        <th><button><a href="{% url 'todolist:toggle-task' id=task.id %}">Change Status</a></b</th>
+        <th><button><a href="{% url 'todolist:toggle-task' id=task.id %}">Change</a></b</th>
         <th><button><a href="{% url 'todolist:delete-task' id=task.id %}">Delete Task</a></button></th>
         
     </tr>
