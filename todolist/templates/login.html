@@ -1,45 +1,58 @@
 {% extends 'base.html' %}
 
 {% block meta %}
-<title>Login</title>
 {% endblock meta %}
 
 {% block content %}
+{% load static %}
 
-<div class = "login">
+ <link rel="stylesheet" href="{% static 'todolist/style.css' %}">
 
-    <h1>Login</h1>
-
-    <form method="POST" action="">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control" ></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
-
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}     
-        
-    Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
-
-</div>
-
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body style="background-color:#CCCCFF ;">
+  <section class="vh-100 ">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-14 col-md-8 col-lg- col-xl-5">
+            <div class="card text-white" style="border-radius: 1rem; background-color: #191970;">
+              <div class="card-body p-5 text-center">
+    
+                <div class="mb-md-5 mt-md-4 pb-5">
+    
+                  <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                  <form method="POST" action="">
+                      {% csrf_token %}
+                  <div class="form-outline form-white mb-4">
+                    <input type="text" class="form-control form-control-lg" name="username" placeholder="Username" />
+                    <label class="form-label">Username</label>
+                  </div>
+    
+                  <div class="form-outline form-white mb-4">
+                    <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" />
+                    <label class="form-label" >Password</label>
+                  </div>
+    
+                  <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+    
+                </div>
+    
+                <div>
+                  <p class="mb-0">Belum punya akun? <a href="{% url 'todolist:register' %}" class="text-white-50 fw-bold">Buat Akun</a>
+                  </p>
+                </div>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</body>
 {% endblock content %}

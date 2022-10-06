@@ -23,3 +23,25 @@ Pada button Create Task telah dibuat URL-nya menuju fungsi create_task pada view
 6. Membuat file forms.py untuk membantu mengimplementasikan fungsi create_task di views.py
 7. Melengkapi file html : todolist.html, register.html, login.html, create_task.html
 8. Melakukan deployment ke heroku
+
+## Apa perbedaan dari Inline, Internal, dan External CSS? Apa saja kelebihan dan kekurangan dari masing-masing style?
+Internal CSS : Menggunakan <style> tag pada head section di HTML. Internal CSS cocok untuk digunakan saat kita ingin menata satu halaman web saja sehingga bisa menjadi kurang efisien saat kita ingin menata banyak halaman.
+
+External CSS : Menggunakan .css file yang dapat mengubah keseluruhan tampilan website dalam satu waktu. Untuk menghubungkan file css ini dengan file html, kita harus menambahkan referensi external filenya. Kekurangan external CSS adalah halaman website tidak akan dirender sampai file CSS sepenuhnya di-load.
+
+Inline CSS : Digunakan untuk menata elemen-elemen spesifik di file HTML. Kita dapat menambahkan atribut style pada tiap tag elemen HTML. Namun, akan menjadi tidak efisien jika kita memiliki banyak elemen yang harus ditata.
+
+##  Jelaskan tag HTML5 yang kamu ketahui.
+1. <a> : untuk mendefinisikan sebuah hyperlink
+2. <form> : untuk membuat sebuah form untuk user input
+3. <img> : menampilkan sebuah gambar
+4. <p> : menampilkan tulisan pendek 
+5. <ul> : menampilkan sebuah unordered list
+
+## Jelaskan tipe-tipe CSS selector yang kamu ketahui.
+1. Universal selector : memilih seluruh elemen, menggunakan *
+2. Element selector : memilih elemen berdasarkan tagnya
+3. Id selector : membuat sebuah atribut id pada elemen HTML yang ingin ditata, lalu memanggil id tersebut dengan #
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+Pertama, saya membuat sebuah static folder yang berisi file style.css untuk membuat external CSS. Kemudian, saya mulai menambahkan header untuk menggunakan bootstrap. Lalu saya melanjutkan design dengan menambahkan style dan CSS.
