@@ -1,12 +1,31 @@
 {% extends 'base.html' %}
 
-{% block meta %}
-<title>Create New Task</title>
-{% endblock meta %}
-
 {% block content %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    </head>
+    <body style="background-color: #CCCCFF;">
+        <h1 style="text-align : center; color :black ;">Create Task</h1>
+        <div class="create-task">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <label type="text">Title</label>
+                <input type="text" id="title" name="title" placeholder="Title">
 
-<div class = "create_task">
+                <label type="text">Description</label>
+                <input type="text" id="description" name="description" placeholder="Description">
+
+                <input type="submit" value="submit">
+            </form>
+        </div>
+    </body>
+</html>
+<!-- <div class = "create_task">
 
     <h1>Create Task</h1>
 
@@ -22,6 +41,6 @@
             </tr>
         </table>
     </form>  
-</div>
+</div> -->
 
 {% endblock content %}

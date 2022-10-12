@@ -1,3 +1,5 @@
+from http.client import HTTPResponse
+from turtle import title
 from django.shortcuts import render
 from todolist.models import Task
 
@@ -10,11 +12,13 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 
 import datetime
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 
 from todolist.forms import Task_Form
-
+from django.views.decorators.csrf import csrf_exempt
+from django.core import serializers
+from django.http import JsonResponse, HttpResponseBadRequest
 
 # Create your views here.
 @login_required(login_url='/todolist/login/')
@@ -89,3 +93,49 @@ def toggle_task(request,id) :
         task.is_finished = True
     task.save()
     return redirect('todolist:show_todolist')
+
+# @login_required(login_url='/todolist/login/')
+# def show_todolist_ajax(request):
+#     data_list  = Task.objects.all()
+#     context = {
+#     'list_barang': data_list,
+#     'nama': 'Aulia Najwa',
+#     'last_login': request.COOKIES['last_login']
+# }
+#     return render(request, "todolist_ajax.html", context)
+
+# @login_required(login_url='/todolist/login/')
+# @csrf_exempt
+# def create_todolist_ajax(request):
+#     if (request.method == 'POST'):
+#         user = request.POST.get('user')
+#         date = request.POST.get('date')
+#         title = request.POST.get('title')
+#         description = request.POST.get('description')
+#         is_finished = request.POST.get('is_finished')
+#         Task.objects.create(user=user, date=date,title=title, description=description,is_finished=is_finished)
+#         response = HttpResponseRedirect(reverse('todolist:show_todolist_ajax'))
+#         return response
+
+def show_json(request) :
+    data = Task.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json",data),content_type="application/json")
+
+@login_required(login_url='/todolist/login/')
+@csrf_exempt
+def add_task(request) :
+    form = Task_Form(request.POST or None)
+    if request.method == 'POST' :
+        if form.is_valid() :
+            title = form.cleaned_data["title"]
+            description = form.cleaned_data["description"]
+            task = Task.objects.create(user = request.user, date=datetime.date.today(),title=title, description=description)
+            data = {
+                "pk": task.pk,
+                "title": task.title,
+                "description": task.title,
+                "is_finished": task.is_finished,
+                "date": task.date
+            }
+            task.save()
+        return JsonResponse(data)
