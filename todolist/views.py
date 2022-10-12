@@ -94,6 +94,29 @@ def toggle_task(request,id) :
     task.save()
     return redirect('todolist:show_todolist')
 
+# @login_required(login_url='/todolist/login/')
+# def show_todolist_ajax(request):
+#     data_list  = Task.objects.all()
+#     context = {
+#     'list_barang': data_list,
+#     'nama': 'Aulia Najwa',
+#     'last_login': request.COOKIES['last_login']
+# }
+#     return render(request, "todolist_ajax.html", context)
+
+# @login_required(login_url='/todolist/login/')
+# @csrf_exempt
+# def create_todolist_ajax(request):
+#     if (request.method == 'POST'):
+#         user = request.POST.get('user')
+#         date = request.POST.get('date')
+#         title = request.POST.get('title')
+#         description = request.POST.get('description')
+#         is_finished = request.POST.get('is_finished')
+#         Task.objects.create(user=user, date=date,title=title, description=description,is_finished=is_finished)
+#         response = HttpResponseRedirect(reverse('todolist:show_todolist_ajax'))
+#         return response
+
 def show_json(request) :
     data = Task.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize("json",data),content_type="application/json")
