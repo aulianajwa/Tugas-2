@@ -1,5 +1,4 @@
 from http.client import HTTPResponse
-from turtle import title
 from django.shortcuts import render
 from todolist.models import Task
 

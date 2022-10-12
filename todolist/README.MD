@@ -1,5 +1,4 @@
 https://katalog-item.herokuapp.com/todolist/
-
 ## Kegunaan  {% csrf_token %}
 Cross-Site Request Forgery Attack merupakan sebuah serangan lama yang dilakukan dengan cara membuat user mengirimkan request ke sebuah website tanpa diketahui oleh user aslinya. Cara untuk mencegahnya adalah dengan membuatkan sebuah token (CSRF token) yang bersifat unik ke tiap user sehingga sulit ditebak. Maka dari itu disertakan {% csrf_token %} pada tag form agar bisa dipastikan bahwa yang akan memasukkan data ke web adalah user yang asli.
 
