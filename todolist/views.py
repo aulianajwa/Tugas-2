@@ -1,23 +1,20 @@
+from ast import If
 from http.client import HTTPResponse
 from django.shortcuts import render
 from todolist.models import Task
-
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
-
 import datetime
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
-
 from todolist.forms import Task_Form
 from django.views.decorators.csrf import csrf_exempt
 from django.core import serializers
-from django.http import JsonResponse, HttpResponseBadRequest
+from django.http import JsonResponse
 
 # Create your views here.
 @login_required(login_url='/todolist/login/')
@@ -92,29 +89,6 @@ def toggle_task(request,id) :
         task.is_finished = True
     task.save()
     return redirect('todolist:show_todolist')
-
-# @login_required(login_url='/todolist/login/')
-# def show_todolist_ajax(request):
-#     data_list  = Task.objects.all()
-#     context = {
-#     'list_barang': data_list,
-#     'nama': 'Aulia Najwa',
-#     'last_login': request.COOKIES['last_login']
-# }
-#     return render(request, "todolist_ajax.html", context)
-
-# @login_required(login_url='/todolist/login/')
-# @csrf_exempt
-# def create_todolist_ajax(request):
-#     if (request.method == 'POST'):
-#         user = request.POST.get('user')
-#         date = request.POST.get('date')
-#         title = request.POST.get('title')
-#         description = request.POST.get('description')
-#         is_finished = request.POST.get('is_finished')
-#         Task.objects.create(user=user, date=date,title=title, description=description,is_finished=is_finished)
-#         response = HttpResponseRedirect(reverse('todolist:show_todolist_ajax'))
-#         return response
 
 def show_json(request) :
     data = Task.objects.filter(user=request.user)
